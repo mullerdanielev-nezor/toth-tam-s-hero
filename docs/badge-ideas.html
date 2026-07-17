@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Háttér-mintázat ötletek — 2 szín, 10-10 variáció</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body { font-family:'Inter', sans-serif; background:#111; color:#1C1B19; }
+  .jumpnav { position:sticky; top:0; background:#000; padding:12px 24px; display:flex; gap:8px; flex-wrap:wrap; z-index:100; }
+  .jumpnav a { color:#cfcac2; text-decoration:none; font-size:11px; padding:5px 9px; border-radius:6px; }
+  .jumpnav a:hover { background:#232323; color:#fff; }
+
+  .sect { min-height:34vh; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; border-bottom:2px solid #000; }
+  .sect .label { position:absolute; top:14px; left:20px; font-family:'Space Grotesk',sans-serif; font-size:11px; opacity:.55; z-index:2; }
+  .sect .content { position:relative; z-index:2; text-align:center; }
+  .kicker { display:inline-block; padding:8px 18px; border-radius:100px; font-size:13px; font-weight:700; font-family:'Space Grotesk',sans-serif; border:1.5px solid #42563A; color:#365030; margin-bottom:14px; background:rgba(255,255,255,.4); }
+  .kickerB { border-color:#8A6A3D; color:#5C4A2E; }
+  h2 { font-family:'Archivo Black',sans-serif; font-size:clamp(26px,3.6vw,42px); text-transform:uppercase; letter-spacing:-1px; }
+
+  /* ===================== A) MOHAZÖLD — KÖR-MOTÍVUM HÁTTEREK ===================== */
+  #a1 { background:#DEE3D9; background-image:radial-gradient(#42563A33 2px, transparent 2px); background-size:26px 26px; }
+  #a2 { background:#DEE3D9; background-image:radial-gradient(circle, transparent 58%, #DEE3D9 60%), repeating-radial-gradient(circle at center, #42563A22 0, #42563A22 1.5px, transparent 1.5px, transparent 34px); }
+  #a3 { background:#DEE3D9; position:relative; }
+  #a3::before { content:''; position:absolute; width:520px; height:520px; border-radius:50%; border:1px solid #42563A33; top:-260px; right:-180px; }
+  #a3::after { content:''; position:absolute; width:340px; height:340px; border-radius:50%; border:1px solid #42563A33; bottom:-200px; left:-120px; }
+  #a4 { background:#DEE3D9; background-image:radial-gradient(#42563A2e 3px, transparent 3px); background-size:22px 22px; background-position:0 0, 11px 11px; }
+  #a5 { background:#DEE3D9; background-image: repeating-radial-gradient(circle at 20% 30%, #42563A22 0 1px, transparent 1px 30px), repeating-radial-gradient(circle at 80% 70%, #42563A1a 0 1px, transparent 1px 42px); }
+  #a6 { background:#DEE3D9; position:relative; }
+  #a6::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle at 50% 50%, transparent 0, transparent 100px, #42563A14 101px, transparent 102px), radial-gradient(circle at 50% 50%, transparent 0, transparent 160px, #42563A14 161px, transparent 162px), radial-gradient(circle at 50% 50%, transparent 0, transparent 220px, #42563A14 221px, transparent 222px); }
+  #a7 { background:#DEE3D9; background-image:radial-gradient(circle at 15% 20%, #42563A26 0%, transparent 18%), radial-gradient(circle at 85% 15%, #42563A1c 0%, transparent 14%), radial-gradient(circle at 75% 80%, #42563A22 0%, transparent 20%), radial-gradient(circle at 10% 85%, #42563A18 0%, transparent 16%); }
+  #a8 { background:#DEE3D9; position:relative; }
+  #a8 .ring { position:absolute; border-radius:50%; border:1.5px solid #42563A2e; }
+  #a9 { background:radial-gradient(circle at center, #EAEDE6 0%, #DEE3D9 70%); background-image:radial-gradient(#42563A20 1px, transparent 1px); background-size:16px 16px; }
+  #a10 { background:#DEE3D9; position:relative; }
+  #a10 .venn { position:absolute; width:220px; height:220px; border-radius:50%; border:1px solid #42563A2a; }
+
+  /* ===================== B) DAD8CF — KERET / VONAL-MOTÍVUM HÁTTEREK ===================== */
+  #b1 { background:#DAD8CF; background-image:linear-gradient(#8A6A3D18 1px, transparent 1px), linear-gradient(90deg, #8A6A3D18 1px, transparent 1px); background-size:32px 32px; }
+  #b2 { background:#DAD8CF; position:relative; }
+  #b2::before { content:''; position:absolute; inset:24px; border:1px solid #8A6A3D33; }
+  #b3 { background:#DAD8CF; position:relative; }
+  #b3 i { position:absolute; width:26px; height:26px; border-color:#8A6A3D44; border-style:solid; }
+  #b4 { background:#DAD8CF; background-image:repeating-linear-gradient(45deg, #8A6A3D14 0 1px, transparent 1px 14px); }
+  #b5 { background:#DAD8CF; position:relative; }
+  #b5 .nest { position:absolute; border:1px solid #8A6A3D26; }
+  #b6 { background:#DAD8CF; background-image:linear-gradient(#8A6A3D22 1.5px, transparent 1.5px); background-size:100% 30px; }
+  #b7 { background:#DAD8CF; position:relative; }
+  #b7::before { content:''; position:absolute; top:20px; left:20px; right:20px; bottom:20px; border:1px dashed #8A6A3D3a; }
+  #b8 { background:#DAD8CF; background-image:repeating-linear-gradient(-45deg, #8A6A3D14 0 1px, transparent 1px 14px), repeating-linear-gradient(45deg, #8A6A3D14 0 1px, transparent 1px 14px); }
+  #b9 { background:#DAD8CF; position:relative; }
+  #b9 .tick { position:absolute; background:#8A6A3D33; }
+  #b10 { background:#DAD8CF; position:relative; }
+  #b10 .rect { position:absolute; border:1px solid #8A6A3D22; }
+</style>
+</head>
+<body>
+
+<div class="jumpnav">
+  <a href="#a1">A1</a><a href="#a2">A2</a><a href="#a3">A3</a><a href="#a4">A4</a><a href="#a5">A5</a>
+  <a href="#a6">A6</a><a href="#a7">A7</a><a href="#a8">A8</a><a href="#a9">A9</a><a href="#a10">A10</a>
+  <span style="width:1px;background:#333;margin:0 4px;"></span>
+  <a href="#b1">B1</a><a href="#b2">B2</a><a href="#b3">B3</a><a href="#b4">B4</a><a href="#b5">B5</a>
+  <a href="#b6">B6</a><a href="#b7">B7</a><a href="#b8">B8</a><a href="#b9">B9</a><a href="#b10">B10</a>
+</div>
+
+<section class="sect" id="a1"><span class="label">A1 · pöttyrács</span><div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="a2"><span class="label">A2 · vékony koncentrikus gyűrű-rács</span><div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="a3"><span class="label">A3 · két nagy, kilógó kör-körvonal a sarkokban</span><div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="a4"><span class="label">A4 · sűrű, eltolt pöttyrács (kevésbé szabályos)</span><div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="a5"><span class="label">A5 · két különböző léptékű pötty-klaszter</span><div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="a6"><span class="label">A6 · középre futó koncentrikus gyűrűk (rádiuszhullám)</span><div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="a7"><span class="label">A7 · elszórt, elmosott "buborék" foltok</span><div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="a8">
+  <span class="label">A8 · véletlenszerűen elhelyezett kör-körvonalak</span>
+  <div class="ring" style="width:90px;height:90px;top:8%;left:6%;"></div>
+  <div class="ring" style="width:50px;height:50px;top:65%;left:14%;"></div>
+  <div class="ring" style="width:130px;height:130px;top:15%;right:8%;"></div>
+  <div class="ring" style="width:60px;height:60px;bottom:10%;right:16%;"></div>
+  <div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div>
+</section>
+<section class="sect" id="a9"><span class="label">A9 · finom pöttyrács + központi radiális fényfolt</span><div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="a10">
+  <span class="label">A10 · Venn-diagram-szerű átfedő körök</span>
+  <div class="venn" style="top:20%;left:38%;"></div>
+  <div class="venn" style="top:38%;left:50%;"></div>
+  <div class="content"><span class="kicker">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div>
+</section>
+
+<section class="sect" id="b1"><span class="label">B1 · finom rácsvonalak (milliméterpapír)</span><div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="b2"><span class="label">B2 · befelé húzott keretvonal a szélek mentén</span><div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="b3">
+  <span class="label">B3 · sarok-jelölők mind a 4 sarokban</span>
+  <i style="top:16px;left:16px;border-width:2px 0 0 2px;"></i>
+  <i style="top:16px;right:16px;border-width:2px 2px 0 0;"></i>
+  <i style="bottom:16px;left:16px;border-width:0 0 2px 2px;"></i>
+  <i style="bottom:16px;right:16px;border-width:0 2px 2px 0;"></i>
+  <div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div>
+</section>
+<section class="sect" id="b4"><span class="label">B4 · átlós vonalkázás (hatching)</span><div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="b5">
+  <span class="label">B5 · egymásba ágyazott keretek (koncentrikus téglalapok)</span>
+  <div class="nest" style="inset:20px;"></div>
+  <div class="nest" style="inset:44px;"></div>
+  <div class="nest" style="inset:68px;"></div>
+  <div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div>
+</section>
+<section class="sect" id="b6"><span class="label">B6 · vízszintes vonalcsíkok (jegyzetfüzet-stílus)</span><div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="b7"><span class="label">B7 · szaggatott belső keret</span><div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="b8"><span class="label">B8 · kereszt-vonalkázás (cross-hatch)</span><div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div></section>
+<section class="sect" id="b9">
+  <span class="label">B9 · mérőszalag-szerű beosztás-jelek a szélen</span>
+  <div class="tick" style="left:0;top:0;bottom:0;width:26px;"></div>
+  <div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div>
+</section>
+<section class="sect" id="b10">
+  <span class="label">B10 · elszórt, halvány téglalap-körvonalak</span>
+  <div class="rect" style="width:120px;height:80px;top:10%;left:8%;"></div>
+  <div class="rect" style="width:70px;height:70px;bottom:12%;right:12%;"></div>
+  <div class="rect" style="width:160px;height:60px;top:60%;left:4%;"></div>
+  <div class="content"><span class="kicker kickerB">SZOLGÁLTATÁSAINK</span><h2>Amiben segítünk</h2></div>
+</section>
+
+</body>
+</html>
