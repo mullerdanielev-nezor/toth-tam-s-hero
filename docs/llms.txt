@@ -19,5 +19,5 @@ Heves megye és Budapest, valamint azok vonzáskörzete egyeztetés alapján.
 - E-mail: vitotamas1999@gmail.com
 
 ## Oldalak
-- [Kezdőlap](https://mullerdanielev-nezor.github.io/toth-tam-s-hero/): szolgáltatások, rólam, GYIK, kapcsolat
-- [Referenciák](https://mullerdanielev-nezor.github.io/toth-tam-s-hero/referenciak.html): elkészült munkák galériája, kategóriák szerint szűrhető
+- [Kezdőlap](https://tothtamasepito.hu/): szolgáltatások, rólam, GYIK, kapcsolat
+- [Referenciák](https://tothtamasepito.hu/referenciak.html): elkészült munkák galériája, kategóriák szerint szűrhető
