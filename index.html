@@ -127,6 +127,9 @@
   .formcol .btn-primary { width:100%; margin-top:2px; padding:14px; font-size:14.5px; }
   .formcol .trust { display:flex; align-items:center; gap:8px; margin-top:13px; font-size:12px; opacity:.65; }
   .formcol .trust .dot { width:7px; height:7px; border-radius:50%; background:#42563A; flex-shrink:0; }
+  .form-success { text-align:center; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14.5px; color:#42563A; padding:14px; }
+  .leadform button[disabled] { opacity:.6; cursor:default; }
+  .form-error { color:#a33; font-size:12.5px; margin-top:10px; text-align:center; }
 
   .gallery { display:flex; gap:3px; height:30vh; position:relative; z-index:2; }
   .gallery .g { flex:1; overflow:hidden; position:relative; transition:flex .4s; border-top:3px solid #42563A; }
@@ -406,20 +409,25 @@
         <div class="formcol">
           <div class="ftitle">Kérj ingyenes árajánlatot</div>
           <div class="fsub">Töltsd ki az alábbi adatokat, és 24 órán belül visszahívlak.</div>
-          <div class="row2">
-            <div class="field"><label>Neved</label><input type="text" placeholder="Kovács Péter"></div>
-            <div class="field"><label>Telefonszámod</label><input type="tel" placeholder="+36 30 000 0000"></div>
-          </div>
-          <div class="field">
-            <label>Milyen munkára van szükséged?</label>
-            <select><option>Válassz szolgáltatást</option><option>Földmunka</option><option>Betonozás</option><option>Térkövezés</option><option>Kerítés</option></select>
-          </div>
-          <div class="field">
-            <label>Röviden a munkáról</label>
-            <textarea placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea>
-          </div>
-          <button class="btn btn-primary">Árajánlatot kérek</button>
-          <div class="trust"><span class="dot"></span> Nincs kötelezettség, ingyenes helyszíni felmérés</div>
+          <form class="leadform" data-success="#form1-success">
+            <input type="hidden" name="access_key" value="c8e5742e-33ba-4de1-b8a3-29d47f615098">
+            <input type="hidden" name="subject" value="Új árajánlatkérés — tothtamasepito.hu (hero)">
+            <div class="row2">
+              <div class="field"><label>Neved</label><input type="text" name="name" placeholder="Kovács Péter" required></div>
+              <div class="field"><label>Telefonszámod</label><input type="tel" name="phone" placeholder="+36 30 000 0000" required></div>
+            </div>
+            <div class="field">
+              <label>Milyen munkára van szükséged?</label>
+              <select name="service"><option>Válassz szolgáltatást</option><option>Földmunka</option><option>Betonozás</option><option>Térkövezés</option><option>Kerítés</option></select>
+            </div>
+            <div class="field">
+              <label>Röviden a munkáról</label>
+              <textarea name="message" placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Árajánlatot kérek</button>
+            <div class="trust"><span class="dot"></span> Nincs kötelezettség, ingyenes helyszíni felmérés</div>
+          </form>
+          <div id="form1-success" class="form-success" hidden>Köszönöm! Megkaptam az üzeneted, 24 órán belül visszahívlak.</div>
         </div>
       </div>
     </div>
@@ -533,14 +541,17 @@
         <div class="crow"><span class="cic">⌂</span> Heves megye és Budapest — teljes vonzáskörzet</div>
       </div>
 
-      <div class="formcol2">
+      <form class="leadform formcol2" data-success="#form2-success">
+        <input type="hidden" name="access_key" value="c8e5742e-33ba-4de1-b8a3-29d47f615098">
+        <input type="hidden" name="subject" value="Új árajánlatkérés — tothtamasepito.hu (kapcsolat)">
         <div class="row2">
-          <div class="field"><label>Neved</label><input type="text" placeholder="Kovács Péter"></div>
-          <div class="field"><label>Telefonszámod</label><input type="tel" placeholder="+36 30 000 0000"></div>
+          <div class="field"><label>Neved</label><input type="text" name="name" placeholder="Kovács Péter" required></div>
+          <div class="field"><label>Telefonszámod</label><input type="tel" name="phone" placeholder="+36 30 000 0000" required></div>
         </div>
-        <div class="field"><label>Üzeneted</label><textarea placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea></div>
-        <button class="btn btn-primary" style="width:100%;">Árajánlatot kérek</button>
-      </div>
+        <div class="field"><label>Üzeneted</label><textarea name="message" placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea></div>
+        <button class="btn btn-primary" style="width:100%;" type="submit">Árajánlatot kérek</button>
+      </form>
+      <div id="form2-success" class="form-success" hidden>Köszönöm! Megkaptam az üzeneted, 24 órán belül visszahívlak.</div>
     </div>
 
     <div class="mapcol">
@@ -645,6 +656,38 @@
     a.addEventListener('click', ()=>{
       hamburger.classList.remove('open');
       mainNav.classList.remove('open');
+    });
+  });
+
+  document.querySelectorAll('.leadform').forEach(form=>{
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const oldLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Küldés...';
+      form.querySelector('.form-error')?.remove();
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        const data = await res.json();
+        if (data.success) {
+          form.hidden = true;
+          document.querySelector(form.dataset.success).hidden = false;
+        } else {
+          throw new Error(data.message || 'Ismeretlen hiba');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = oldLabel;
+        const errEl = document.createElement('div');
+        errEl.className = 'form-error';
+        errEl.textContent = 'Nem sikerült elküldeni. Kérlek próbáld újra, vagy hívj közvetlenül.';
+        form.appendChild(errEl);
+      }
     });
   });
 </script>
