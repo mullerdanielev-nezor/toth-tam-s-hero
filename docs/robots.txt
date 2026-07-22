@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mullerdanielev-nezor.github.io/toth-tam-s-hero/sitemap.xml
