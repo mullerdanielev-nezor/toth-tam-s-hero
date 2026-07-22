@@ -140,6 +140,9 @@
   .form-success { text-align:center; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14.5px; color:#42563A; padding:14px; }
   .leadform button[disabled] { opacity:.6; cursor:default; }
   .form-error { color:#a33; font-size:12.5px; margin-top:10px; text-align:center; }
+  .consent { display:flex; align-items:flex-start; gap:8px; font-size:11.5px; opacity:.75; margin:12px 0 14px; line-height:1.5; cursor:pointer; }
+  .consent input { width:auto; margin-top:2px; flex-shrink:0; }
+  .consent a { color:#42563A; }
 
   .gallery { display:flex; gap:3px; height:30vh; position:relative; z-index:2; }
   .gallery .g { flex:1; overflow:hidden; position:relative; transition:flex .4s; border-top:3px solid #42563A; }
@@ -434,6 +437,7 @@
               <label>Röviden a munkáról</label>
               <textarea name="message" placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea>
             </div>
+            <label class="consent"><input type="checkbox" required> Elolvastam és elfogadom az <a href="adatkezeles.html" target="_blank" rel="noopener">adatkezelési tájékoztatót</a>.</label>
             <button class="btn btn-primary" type="submit">Árajánlatot kérek</button>
             <div class="trust"><span class="dot"></span> Nincs kötelezettség, ingyenes helyszíni felmérés</div>
           </form>
@@ -559,6 +563,7 @@
           <div class="field"><label>Telefonszámod</label><input type="tel" name="phone" placeholder="+36 30 000 0000" required></div>
         </div>
         <div class="field"><label>Üzeneted</label><textarea name="message" placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea></div>
+        <label class="consent"><input type="checkbox" required> Elolvastam és elfogadom az <a href="adatkezeles.html" target="_blank" rel="noopener">adatkezelési tájékoztatót</a>.</label>
         <button class="btn btn-primary" style="width:100%;" type="submit">Árajánlatot kérek</button>
       </form>
       <div id="form2-success" class="form-success" hidden>Köszönöm! Megkaptam az üzeneted, 24 órán belül visszahívlak.</div>
@@ -623,6 +628,11 @@
       <span>Alapozás</span>
       <span>Betonozás</span>
       <span>Térkövezés</span>
+    </div>
+    <div class="fcol">
+      <h4>Jogi</h4>
+      <a href="impresszum.html">Impresszum</a>
+      <a href="adatkezeles.html">Adatkezelés</a>
     </div>
   </div>
   <div class="fbottom">© 2026 Tóth Tamás — Minden jog fenntartva.</div>
