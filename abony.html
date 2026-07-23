@@ -56,6 +56,7 @@
     <a href="index.html#faq">GYIK</a>
     <a href="index.html#contact">Kapcsolat</a>
   </nav>
+  <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
 </header>
 
 <section class="loc-hero">
@@ -148,6 +149,21 @@
   </div>
   <div class="fbottom">© 2026 Tóth Tamás — Minden jog fenntartva.</div>
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mainNav = document.getElementById('mainNav');
+  hamburger.addEventListener('click', ()=>{
+    hamburger.classList.toggle('open');
+    mainNav.classList.toggle('open');
+  });
+  mainNav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      hamburger.classList.remove('open');
+      mainNav.classList.remove('open');
+    });
+  });
+</script>
 
 </body>
 </html>
