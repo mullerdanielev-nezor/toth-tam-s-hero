@@ -32,6 +32,7 @@
   .btn-primary:hover { transform:translateY(-2px); box-shadow:0 16px 36px rgba(66,86,58,.45); }
   .btn-ghost { background:transparent; color:#F4F2ED; border:1.5px solid rgba(244,242,237,.5); }
   .btn-outline-light { background:rgba(244,242,237,.1); color:#F4F2ED; border:1.5px solid rgba(244,242,237,.55); backdrop-filter:blur(4px); }
+  .btn-outline { background:transparent; color:#1C1B19; border:1.5px solid rgba(28,27,25,.3); }
 
   .kicker { display:inline-block; padding:7px 16px; border-radius:100px; font-size:12.5px; font-weight:700; border:1.5px solid #42563A; color:#42563A; margin-bottom:16px; font-family:'Space Grotesk',sans-serif; }
 
@@ -48,24 +49,24 @@
   header.site .hphone span.txt { display:none; }
   @media(min-width:560px){ header.site .hphone span.txt{ display:inline; } }
 
-  /* ===== Hero — full-bleed, kép-domináns, mobil-first ===== */
-  .hero { position:relative; min-height:100svh; min-height:100vh; display:flex; align-items:flex-end; overflow:hidden; }
-  .hero .bg { position:absolute; inset:0; z-index:0; }
-  .hero .bg img { object-position:60% 32%; }
-  .hero .bg::after { content:''; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(11,11,11,.18) 0%, rgba(11,11,11,.22) 32%, rgba(11,11,11,.62) 68%, rgba(11,11,11,.94) 100%); }
-  .hero .in { position:relative; z-index:2; max-width:640px; margin:0 auto; padding:0 24px 44px; text-align:center; width:100%; }
-  .hero h1 { font-family:'Archivo Black',sans-serif; font-size:clamp(30px,7.5vw,54px); text-transform:uppercase; letter-spacing:-1.5px; line-height:1.03; margin-bottom:14px; color:#F4F2ED; }
-  .hero h1 em { font-style:normal; color:#9CB58E; }
-  .hero p.sub { font-size:15.5px; line-height:1.55; color:#DAD8CF; opacity:.9; max-width:480px; margin:0 auto 22px; }
+  /* ===== Hero — kép felül, lekerekített kártya alul, kép-fókuszban ===== */
+  .hero { display:flex; flex-direction:column; }
+  .hero .imgwrap { position:relative; width:100%; height:58vh; min-height:340px; max-height:640px; overflow:hidden; }
+  .hero .imgwrap img { object-position:32% 30%; }
+  .hero .card { position:relative; z-index:2; margin-top:-26px; background:#DAD8CF; border-radius:26px 26px 0 0; padding:32px 24px 40px; text-align:center; }
+  .hero h1 { font-family:'Archivo Black',sans-serif; font-size:clamp(28px,7vw,50px); text-transform:uppercase; letter-spacing:-1.5px; line-height:1.03; margin-bottom:14px; color:#1C1B19; }
+  .hero h1 em { font-style:normal; color:#42563A; }
+  .hero p.sub { font-size:15px; line-height:1.55; opacity:.75; max-width:480px; margin:0 auto 22px; }
   .hero .ctarow { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:22px; }
-  .hero .trustrow { display:flex; gap:16px; row-gap:8px; justify-content:center; flex-wrap:wrap; font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:600; color:#DAD8CF; }
+  .hero .trustrow { display:flex; gap:16px; row-gap:8px; justify-content:center; flex-wrap:wrap; font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:600; opacity:.75; }
   .hero .trustrow span { display:flex; align-items:center; gap:6px; }
-  .hero .trustrow .dot { width:6px; height:6px; border-radius:50%; background:#9CB58E; flex-shrink:0; }
+  .hero .trustrow .dot { width:6px; height:6px; border-radius:50%; background:#42563A; flex-shrink:0; }
   @media(min-width:640px){
-    .hero { min-height:88vh; }
-    .hero .in { max-width:720px; padding-bottom:64px; }
+    .hero .imgwrap { height:46vh; max-height:440px; }
+    .hero .card { padding:40px 24px 48px; }
+    .hero .in { max-width:720px; margin:0 auto; }
     .hero p.sub { font-size:17px; max-width:560px; }
+    .hero .ctarow { margin-bottom:26px; }
     .hero .trustrow { gap:26px; font-size:13px; }
   }
 
@@ -180,19 +181,22 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="bg"><img class="photo" src="preview/img/kertepites-fekete-keritespanel-cserjesorral-abony-wide.jpg" alt="Sötét kerítéspanel, ültetett cserjesorral"></div>
-  <div class="in">
+  <div class="imgwrap"><img class="photo" src="preview/img/kertepites-fekete-keritespanel-cserjesorral-abony-wide.jpg" alt="Sötét kerítéspanel, ültetett cserjesorral"></div>
+  <div class="card">
+   <div class="in">
+    <span class="kicker">FÖLDMUNKA · BETON · TÉRKŐ · KERÍTÉS</span>
     <h1>Ne egy <em>találgatós</em> vállalkozóra bízd az udvarod</h1>
     <p class="sub">Megrepedt betonlap, süllyedő térkő, félbehagyott kerítés — a legtöbb rossz tapasztalat ugyanonnan ered. Én fix áron, írásos garanciával, saját csapattal dolgozom.</p>
     <div class="ctarow">
       <a class="btn btn-primary" href="#ajanlat">Ingyenes árajánlatot kérek</a>
-      <a class="btn btn-outline-light" href="tel:+36209796081">☎ +36 20 979 6081</a>
+      <a class="btn btn-outline" href="tel:+36209796081">☎ +36 20 979 6081</a>
     </div>
     <div class="trustrow">
       <span><i class="dot"></i>15+ év tapasztalat</span>
       <span><i class="dot"></i>200+ elkészült munka</span>
       <span><i class="dot"></i>Írásos garancia</span>
     </div>
+   </div>
   </div>
 </section>
 
