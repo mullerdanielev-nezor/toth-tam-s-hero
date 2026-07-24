@@ -66,11 +66,6 @@
     .hero .trustrow { gap:26px; font-size:13px; }
   }
 
-  /* ===== CTA-sáv hero alatt ===== */
-  .ctastrip { background:#42563A; padding:18px 20px; display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; text-align:center; }
-  .ctastrip span { color:#F4F2ED; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px; }
-  .ctastrip .btn-primary { background:#F4F2ED; color:#1C1B19; box-shadow:none; }
-
   /* ===== Problem section ===== */
   .problem { background:#171C15; color:#F4F2ED; padding:76px 40px; }
   .problem .sectionhead { text-align:center; max-width:640px; margin:0 auto 44px; }
@@ -190,7 +185,7 @@
     <h1>Precíz munka, amire <em>évekig</em> számíthatsz</h1>
     <p class="sub">Fix áron, írásos garanciával és saját, állandó csapattal dolgozom — a helyszíni felméréstől az utolsó kő lerakásáig én viszem végig a munkát.</p>
     <div class="ctarow">
-      <a class="btn btn-primary" href="#ajanlat">Ingyenes árajánlatot kérek</a>
+      <a class="btn btn-primary" href="#ajanlat-top">Ingyenes árajánlatot kérek</a>
       <a class="btn btn-outline" href="tel:+36209796081">☎ +36 20 979 6081</a>
     </div>
     <div class="trustrow">
@@ -202,10 +197,46 @@
   </div>
 </section>
 
-<div class="ctastrip">
-  <span>Kérj ingyenes árajánlatot még ma</span>
-  <a class="btn btn-primary" href="#ajanlat">Ingyenes árajánlatot kérek</a>
-</div>
+<!-- ===== CTA + FORM (hero alatt, a legalsó form 1:1 másolata) ===== -->
+<section class="finalcta" id="ajanlat-top">
+  <div class="fcwrap">
+    <div class="fcleft">
+      <span class="kicker">UTOLSÓ LÉPÉS</span>
+      <h2>Kérd el az ingyenes árajánlatod</h2>
+      <p>Töltsd ki az űrlapot két perc alatt — 24 órán belül visszahívlak, és egyeztetjük az időpontot a helyszíni felméréshez.</p>
+      <div class="trustline"><i class="dot"></i>Kötelezettségmentes, átlátható árajánlat</div>
+      <div class="trustline"><i class="dot"></i>Írásos, fix árajánlat a felmérés után</div>
+      <div class="trustline"><i class="dot"></i>15+ éve dolgozom a szakmában</div>
+      <a class="bigphone" href="tel:+36209796081"><span class="ic">☎</span> +36 20 979 6081</a>
+    </div>
+    <div class="formcard">
+      <b class="ftitle">Ingyenes árajánlatot kérek</b>
+      <p class="fsub">Töltsd ki az alábbi adatokat, és 24 órán belül visszahívlak.</p>
+      <form class="leadform" data-success="#landing-form-success-top">
+        <input type="hidden" name="access_key" value="c8e5742e-33ba-4de1-b8a3-29d47f615098">
+        <input type="hidden" name="subject" value="Új árajánlatkérés — tothtamasepito.hu (landing, hero alatt)">
+        <div class="row2">
+          <div class="field"><label>Neved</label><input type="text" name="name" placeholder="Kovács Péter" required></div>
+          <div class="field"><label>Telefonszámod</label><input type="tel" name="phone" placeholder="+36 30 000 0000" required></div>
+        </div>
+        <div class="field"><label>Válassz szolgáltatást</label>
+          <select name="service">
+            <option>Válassz szolgáltatást</option>
+            <option>Földmunka</option>
+            <option>Alapozás</option>
+            <option>Betonozás</option>
+            <option>Térkövezés</option>
+            <option>Kerítés</option>
+          </select>
+        </div>
+        <div class="field"><label>Üzeneted (opcionális)</label><textarea name="message" placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea></div>
+        <button class="btn btn-primary" type="submit">Ingyenes árajánlatot kérek</button>
+        <div class="trust"><i class="dot"></i>Kötelezettségmentes, nem adjuk el az adataidat</div>
+      </form>
+      <div id="landing-form-success-top" class="form-success" hidden>Köszönöm! Megkaptam az üzeneted, 24 órán belül visszahívlak.</div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== PROBLÉMA ===== -->
 <section class="problem">
@@ -253,7 +284,6 @@
     <div><b>15+</b><span>Év tapasztalat</span></div>
     <div><b>200+</b><span>Elkészült munka</span></div>
     <div><b>100%</b><span>Garanciával</span></div>
-    <div><b>24h</b><span>Válaszidő</span></div>
   </div>
 </section>
 
@@ -291,7 +321,7 @@
     <h2>Amit érdemes tudni, mielőtt írsz</h2>
   </div>
   <div class="acc">
-    <details class="aitem" open><summary><span class="n">1</span>Tényleg ingyenes a helyszíni felmérés?<span class="plus">+</span></summary><div class="abody">Igen — a felmérést és az árajánlatot mindig ingyenesen, kötelezettség nélkül készítem el.</div></details>
+    <details class="aitem" open><summary><span class="n">1</span>Hogyan zajlik a helyszíni felmérés?<span class="plus">+</span></summary><div class="abody">A helyszínen megnézem a munkát, és ez alapján adok írásos, fix árajánlatot — a felmérés időpontjáról és részleteiről telefonon egyeztetünk.</div></details>
     <details class="aitem"><summary><span class="n">2</span>Adsz garanciát a munkára?<span class="plus">+</span></summary><div class="abody">Igen, minden elvégzett munkára írásos garanciát vállalok — a részletek a felmérés után, az árajánlatban szerepelnek.</div></details>
     <details class="aitem"><summary><span class="n">3</span>Te magad végzed a munkát, vagy alvállalkozóval?<span class="plus">+</span></summary><div class="abody">A munkák nagy részét személyesen, állandó, begyakorolt csapattal végzem — nem adom tovább alvállalkozóknak.</div></details>
     <details class="aitem"><summary><span class="n">4</span>Milyen területen vállalsz munkát?<span class="plus">+</span></summary><div class="abody">Elsősorban Heves megyében és Budapesten, illetve azok vonzáskörzetében — nagyobb projektek esetén ennél messzebb is, egyeztetés alapján.</div></details>
