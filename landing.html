@@ -36,10 +36,6 @@
 
   .kicker { display:inline-block; padding:7px 16px; border-radius:100px; font-size:12.5px; font-weight:700; border:1.5px solid #42563A; color:#42563A; margin-bottom:16px; font-family:'Space Grotesk',sans-serif; }
 
-  /* ===== Top trust bar ===== */
-  .topbar { background:#171C15; color:#DAD8CF; font-family:'Space Grotesk',sans-serif; font-size:12.5px; font-weight:600; text-align:center; padding:9px 16px; letter-spacing:.2px; }
-  .topbar b { color:#9CB58E; }
-
   /* ===== Header ===== */
   header.site { background:#F4F2ED; display:flex; align-items:center; justify-content:space-between; padding:16px 40px; border-bottom:1px solid rgba(28,27,25,.1); position:sticky; top:0; z-index:100; }
   .logo { font-family:'Archivo Black',sans-serif; font-size:18px; letter-spacing:-0.5px; color:#1C1B19; text-decoration:none; }
@@ -70,6 +66,11 @@
     .hero .trustrow { gap:26px; font-size:13px; }
   }
 
+  /* ===== CTA-sáv hero alatt ===== */
+  .ctastrip { background:#42563A; padding:18px 20px; display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; text-align:center; }
+  .ctastrip span { color:#F4F2ED; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px; }
+  .ctastrip .btn-primary { background:#F4F2ED; color:#1C1B19; box-shadow:none; }
+
   /* ===== Problem section ===== */
   .problem { background:#171C15; color:#F4F2ED; padding:76px 40px; }
   .problem .sectionhead { text-align:center; max-width:640px; margin:0 auto 44px; }
@@ -78,44 +79,47 @@
   .problem .sectionhead p { opacity:.65; font-size:15.5px; line-height:1.6; color:#DAD8CF; }
   .plist { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:820px; margin:0 auto; }
   @media(max-width:680px){ .plist{ grid-template-columns:1fr; } }
-  .pitem { display:flex; gap:14px; background:rgba(244,242,237,.05); border:1px solid rgba(244,242,237,.1); border-radius:14px; padding:20px; }
+  .pitem { display:flex; align-items:center; gap:14px; background:rgba(244,242,237,.05); border:1px solid rgba(244,242,237,.1); border-radius:14px; padding:18px 20px; }
   .pitem .x { flex-shrink:0; width:30px; height:30px; border-radius:50%; background:rgba(156,181,142,.18); color:#9CB58E; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; }
-  .pitem p { font-size:14.5px; line-height:1.55; opacity:.85; }
-  .pitem b { display:block; font-family:'Space Grotesk',sans-serif; font-size:14.5px; margin-bottom:4px; color:#F4F2ED; }
+  .pitem b { font-family:'Space Grotesk',sans-serif; font-size:15px; color:#F4F2ED; }
 
-  /* ===== Solution section ===== */
-  .solution { background:#DEE3D9; padding:76px 40px; }
+  /* ===== Idézet ===== */
+  .quote { background:#DEE3D9; padding:70px 40px; text-align:center; }
+  .quote blockquote { max-width:620px; margin:0 auto; font-family:'Space Grotesk',sans-serif; font-size:clamp(19px,2.6vw,26px); font-weight:600; line-height:1.5; color:#1C1B19; font-style:normal; }
+  .quote blockquote::before { content:'“'; color:#42563A; }
+  .quote blockquote::after { content:'”'; color:#42563A; }
+  .quote cite { display:block; margin-top:18px; font-family:'Inter',sans-serif; font-style:normal; font-size:13.5px; opacity:.65; }
   .sectionhead { text-align:center; max-width:640px; margin:0 auto 46px; }
   .sectionhead h2 { font-family:'Archivo Black',sans-serif; font-size:clamp(26px,3.6vw,40px); text-transform:uppercase; letter-spacing:-1px; margin-bottom:12px; color:#1C1B19; }
   .sectionhead p { font-size:15.5px; opacity:.65; line-height:1.6; color:#3A4536; }
-  .scards { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1080px; margin:0 auto; }
-  @media(max-width:900px){ .scards{ grid-template-columns:repeat(2,1fr); } }
-  @media(max-width:520px){ .scards{ grid-template-columns:1fr; } }
-  .scard { background:#F4F2ED; border-radius:16px; padding:26px 22px; border:1px solid rgba(28,27,25,.08); }
-  .scard .ic { width:44px; height:44px; border-radius:12px; background:#42563A; color:#F4F2ED; display:flex; align-items:center; justify-content:center; font-size:19px; margin-bottom:16px; }
-  .scard b { display:block; font-family:'Space Grotesk',sans-serif; font-size:15.5px; margin-bottom:7px; }
-  .scard p { font-size:13.5px; line-height:1.55; opacity:.7; }
 
   /* ===== Proof / gallery ===== */
   .proof { background:#F4F2ED; padding:76px 40px; }
-  .pgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; max-width:1080px; margin:0 auto 40px; }
-  @media(max-width:760px){ .pgrid{ grid-template-columns:repeat(2,1fr); } }
-  .pgrid .gi { border-radius:14px; overflow:hidden; aspect-ratio:4/3; position:relative; }
+  .pgrid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; max-width:1080px; margin:0 auto 40px; }
+  @media(max-width:900px){ .pgrid{ grid-template-columns:repeat(3,1fr); } }
+  @media(max-width:600px){ .pgrid{ grid-template-columns:repeat(2,1fr); } }
+  .pgrid .gi { border-radius:14px; overflow:hidden; aspect-ratio:4/3; position:relative; cursor:pointer; border:none; padding:0; display:block; }
   .pgrid .gi img { transition:transform .4s; }
   .pgrid .gi:hover img { transform:scale(1.06); }
   .statsbar { display:flex; justify-content:center; gap:50px; flex-wrap:wrap; text-align:center; }
   .statsbar div b { display:block; font-family:'Archivo Black',sans-serif; font-size:clamp(28px,4vw,40px); color:#42563A; }
   .statsbar div span { font-family:'Space Grotesk',sans-serif; font-size:13px; opacity:.65; }
 
-  /* ===== Process ===== */
-  .process { background:#DAD8CF; padding:76px 40px; }
-  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:1080px; margin:0 auto; counter-reset:step; }
-  @media(max-width:900px){ .steps{ grid-template-columns:repeat(2,1fr); } }
-  @media(max-width:520px){ .steps{ grid-template-columns:1fr; } }
-  .step { position:relative; padding-top:8px; }
-  .step .n { font-family:'Archivo Black',sans-serif; font-size:15px; width:38px; height:38px; border-radius:50%; background:#42563A; color:#F4F2ED; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-  .step b { display:block; font-family:'Space Grotesk',sans-serif; font-size:15.5px; margin-bottom:7px; }
-  .step p { font-size:13.5px; line-height:1.55; opacity:.7; }
+  /* ===== Lightbox ===== */
+  .lightbox { position:fixed; inset:0; z-index:500; background:rgba(11,11,11,.92); display:none; align-items:center; justify-content:center; padding:20px; }
+  .lightbox.open { display:flex; }
+  .lightbox .lbinner { position:relative; max-width:900px; width:100%; max-height:90vh; display:flex; flex-direction:column; align-items:center; }
+  .lightbox img { max-width:100%; max-height:65vh; border-radius:12px; object-fit:contain; }
+  .lightbox .lbclose { position:absolute; top:-44px; right:0; width:38px; height:38px; border-radius:50%; background:rgba(244,242,237,.15); color:#F4F2ED; border:1.5px solid rgba(244,242,237,.4); font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .lightbox .lbcta { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:22px; }
+  @media(max-width:640px){ .lightbox .lbclose{ top:-40px; } .lightbox .lbcta{ flex-direction:column; width:100%; } .lightbox .lbcta .btn{ width:100%; } }
+
+  /* ===== Lokáció ===== */
+  .area { background:#DAD8CF; padding:76px 40px; }
+  .area .mapcard { max-width:340px; margin:0 auto; background:#1C1B19; border-radius:18px; overflow:hidden; padding:16px; box-shadow:0 20px 40px rgba(0,0,0,.15); }
+  .area .maplegend { display:flex; gap:20px; justify-content:center; padding:12px 6px 4px; font-family:'Space Grotesk',sans-serif; font-size:12px; color:#DAD8CF; }
+  .area .maplegend span { display:flex; align-items:center; gap:8px; }
+  .area .maplegend i { width:12px; height:12px; display:inline-block; border-radius:3px; }
 
   /* ===== FAQ ===== */
   .faqsec { background:#F4F2ED; padding:76px 40px; }
@@ -172,8 +176,6 @@
 </head>
 <body>
 
-<div class="topbar">⏱ <b>24 órán belül</b> visszahívlak, minden megkeresésre &nbsp;·&nbsp; Ingyenes, kötelezettségmentes helyszíni felmérés</div>
-
 <header class="site">
   <a class="logo" href="index.html">TÓTH<span>·</span>TAMÁS</a>
   <a class="hphone" href="tel:+36209796081"><span class="ic">☎</span><span class="txt">+36 20 979 6081</span></a>
@@ -200,6 +202,11 @@
   </div>
 </section>
 
+<div class="ctastrip">
+  <span>Kérj ingyenes árajánlatot még ma</span>
+  <a class="btn btn-primary" href="#ajanlat">Ingyenes árajánlatot kérek</a>
+</div>
+
 <!-- ===== PROBLÉMA ===== -->
 <section class="problem">
   <div class="sectionhead">
@@ -208,26 +215,17 @@
     <p>15+ év alatt ez lett a négy alapelvem — ezekre mindig számíthatsz, munkától és mérettől függetlenül.</p>
   </div>
   <div class="plist">
-    <div class="pitem"><span class="x">✓</span><div><b>Gyors válasz</b><p>24 órán belül visszahívlak minden megkeresésre, és pontos, írásos árajánlatot adok.</p></div></div>
-    <div class="pitem"><span class="x">✓</span><div><b>Végigviszem a munkát</b><p>A megbeszélt időpontban kezdek, és veled maradok, amíg a projekt teljesen el nem készül.</p></div></div>
-    <div class="pitem"><span class="x">✓</span><div><b>Átlátható árazás</b><p>A helyszíni felmérés után fix, írásos árajánlatot kapsz — pontosan azt fizeted, amiben megegyeztünk.</p></div></div>
-    <div class="pitem"><span class="x">✓</span><div><b>Anyag és technológia, ami kitart</b><p>Gondos alapozással és minőségi anyaggal dolgozom, hogy a munka évekig, ne csak egy szezonig szolgáljon.</p></div></div>
+    <div class="pitem"><span class="x">✓</span><b>Gyors válasz</b></div>
+    <div class="pitem"><span class="x">✓</span><b>Végigviszem a munkát</b></div>
+    <div class="pitem"><span class="x">✓</span><b>Átlátható árazás</b></div>
+    <div class="pitem"><span class="x">✓</span><b>Anyag és technológia, ami kitart</b></div>
   </div>
 </section>
 
-<!-- ===== MEGOLDÁS ===== -->
-<section class="solution">
-  <div class="sectionhead">
-    <span class="kicker">ÍGY DOLGOZOM ÉN</span>
-    <h2>A folyamat, amiben mindig tudod, hol tartunk</h2>
-    <p>15+ év alatt alakult ki ez a rendszer — átlátható és kiszámítható, az első hívástól a kész munkáig.</p>
-  </div>
-  <div class="scards">
-    <div class="scard"><div class="ic">📐</div><b>Ingyenes felmérés, fix ár</b><p>A helyszínen felmérem a munkát, és írásos, fix árajánlatot adok — nincs utólagos meglepetés.</p></div>
-    <div class="scard"><div class="ic">👷</div><b>Saját, állandó csapat</b><p>Nem adom tovább alvállalkozóknak — akit megismersz az egyeztetésen, ő fogja elvégezni a munkát.</p></div>
-    <div class="scard"><div class="ic">📝</div><b>Írásos garancia</b><p>Minden elkészült munkára garanciát vállalok, papíron rögzítve — nem csak szóbeli ígéret.</p></div>
-    <div class="scard"><div class="ic">⏱</div><b>Betartott határidő</b><p>A vállalt időpontban kezdek, és nem hagyom félbe a munkát egy jobban fizető megbízásért.</p></div>
-  </div>
+<!-- ===== IDÉZET ===== -->
+<section class="quote">
+  <blockquote>Pontosan azt kaptuk, amiben megegyeztünk — határidőre, extra egyeztetés nélkül. Az udvarunk azóta is úgy néz ki, mint az első napon.</blockquote>
+  <cite>— Egy elégedett ügyfél visszajelzése</cite>
 </section>
 
 <!-- ===== BIZONYÍTÉK / GALÉRIA ===== -->
@@ -237,13 +235,19 @@
     <h2>Nem ígéret — ez a bizonyíték</h2>
     <p>Válogatás a legutóbbi munkáimból. A teljes galéria a <a href="referenciak.html" style="color:#42563A;font-weight:700;">Munkáim</a> oldalon érhető el.</p>
   </div>
-  <div class="pgrid">
-    <div class="gi"><img class="photo" src="preview/img/alapozas-zsaluzas-cegled.webp" alt="Alapozás, zsaluzás"></div>
-    <div class="gi"><img class="photo" src="preview/img/betonozas-kesz-jarda-nagykoros.webp" alt="Kész betonjárda"></div>
-    <div class="gi"><img class="photo" src="preview/img/terkovezes-udvar-lepcsos-cegled.webp" alt="Térkövezett udvar"></div>
-    <div class="gi"><img class="photo" src="preview/img/terkovezes-nagy-terasz-keritessel-cegled.webp" alt="Kerítésépítés"></div>
-    <div class="gi"><img class="photo" src="preview/img/foldmunka-zuzottko-teritese-abony.webp" alt="Földmunka, zúzottkő terítés"></div>
-    <div class="gi"><img class="photo" src="preview/img/kertepites-sargablokk-keritesoszlopokkal-nagykoros.jpg" alt="Kerítésoszlopok építése"></div>
+  <div class="pgrid" id="pgrid">
+    <button class="gi" data-caption="Kerítés, ültetett cserjesorral — Abony"><img class="photo" src="preview/img/kertepites-fekete-keritespanel-cserjesorral-abony.jpg" alt="Kerítés, ültetett cserjesorral"></button>
+    <button class="gi" data-caption="Kerítés, sárga blokk oszlopokkal — Cegléd"><img class="photo" src="preview/img/kertepites-sargablokk-keritesoszlopokkal-cegled.jpg" alt="Kerítés, sárga blokk oszlopokkal"></button>
+    <button class="gi" data-caption="Barna trapézlemez kerítés — Kecskemét"><img class="photo" src="preview/img/kertepites-barna-trapezlemez-keritese-kecskemet.jpg" alt="Barna trapézlemez kerítés"></button>
+    <button class="gi" data-caption="Kész kerítéspanel a mezsgyén — Abony"><img class="photo" src="preview/img/kertepites-kesz-keritespanel-mezsgyen-abony.jpg" alt="Kész kerítéspanel a mezsgyén"></button>
+    <button class="gi" data-caption="Térkövezett udvar, lépcsős kialakítás — Cegléd"><img class="photo" src="preview/img/terkovezes-udvar-epites-cegled.webp" alt="Térkövezett udvar"></button>
+    <button class="gi" data-caption="Kész teraszrészlet — Cegléd"><img class="photo" src="preview/img/terkovezes-kesz-terasz-cegled.webp" alt="Kész teraszrészlet"></button>
+    <button class="gi" data-caption="Kész betonlap — Cegléd"><img class="photo" src="preview/img/betonozas-kesz-betonlap-cegled.webp" alt="Kész betonlap"></button>
+    <button class="gi" data-caption="Teraszalap betonozása — Cegléd"><img class="photo" src="preview/img/betonozas-teraszalap-betonozasa-cegled.jpg" alt="Teraszalap betonozása"></button>
+    <button class="gi" data-caption="Vasalt alap az udvaron — Nagykőrös"><img class="photo" src="preview/img/alapozas-vasalt-alap-nagykoros.webp" alt="Vasalt alap az udvaron"></button>
+    <button class="gi" data-caption="Kerítés, sárga blokk oszlopokkal — Nagykőrös"><img class="photo" src="preview/img/kertepites-sargablokk-keritesoszlopokkal-nagykoros.jpg" alt="Kerítés, sárga blokk oszlopokkal"></button>
+    <button class="gi" data-caption="Fekete kerítéspanel, oszlopokkal — Abony"><img class="photo" src="preview/img/kertepites-fekete-keritespanel-oszlopokkal-abony.jpg" alt="Fekete kerítéspanel, oszlopokkal"></button>
+    <button class="gi" data-caption="Kerítésépítés előkészítése — Nagykőrös"><img class="photo" src="preview/img/kertepites-keritesepites-elokeszitese-nagykoros.jpg" alt="Kerítésépítés előkészítése"></button>
   </div>
   <div class="statsbar">
     <div><b>15+</b><span>Év tapasztalat</span></div>
@@ -253,18 +257,30 @@
   </div>
 </section>
 
-<!-- ===== FOLYAMAT ===== -->
-<section class="process">
+<!-- ===== LOKÁCIÓ ===== -->
+<section class="area">
   <div class="sectionhead">
-    <span class="kicker">FOLYAMAT</span>
-    <h2>4 lépés az ajánlatkéréstől a kész munkáig</h2>
-    <p>Végig tudod, hol tart a folyamat — nincs bizonytalanság, nincs várakozás válasz nélkül.</p>
+    <span class="kicker">TERÜLET</span>
+    <h2>Heves megye és Budapest — teljes vonzáskörzet</h2>
+    <p>Elsősorban itt vállalok munkát, de a vonzáskörzetükben egyeztetés alapján nagyobb projekteket is elvállalok.</p>
   </div>
-  <div class="steps">
-    <div class="step"><div class="n">1</div><b>Megkeresés</b><p>Kitöltöd az űrlapot, vagy felhívsz — 24 órán belül visszajelzek.</p></div>
-    <div class="step"><div class="n">2</div><b>Helyszíni felmérés</b><p>Ingyenesen, kötelezettség nélkül megnézem a terepet és átbeszéljük az igényeidet.</p></div>
-    <div class="step"><div class="n">3</div><b>Fix árajánlat</b><p>Írásban megkapod a pontos árat és az időpontot — meglepetések nélkül.</p></div>
-    <div class="step"><div class="n">4</div><b>Kivitelezés, garanciával</b><p>Elkészítem a munkát a vállalt határidőre, írásos garanciával.</p></div>
+  <div class="mapcard">
+    <svg viewBox="0 0 420 460" width="100%" height="100%">
+      <rect width="420" height="460" rx="18" fill="#0B0B0B"/>
+      <path d="M40 180 L90 90 L180 55 L260 70 L330 60 L385 110 L400 190 L370 260 L390 320 L340 400 L250 425 L160 410 L90 370 L55 300 L30 240 Z"
+            fill="none" stroke="#3A3934" stroke-width="2"/>
+      <path d="M210 130 L275 120 L305 160 L290 210 L235 220 L195 185 Z" fill="#42563A" opacity="0.85"/>
+      <text x="245" y="172" text-anchor="middle" font-family="Space Grotesk" font-size="13" font-weight="700" fill="#F4F2ED">HEVES</text>
+      <text x="245" y="188" text-anchor="middle" font-family="Space Grotesk" font-size="9" fill="#DAD8CF" opacity="0.8">MEGYE</text>
+      <circle cx="210" cy="270" r="9" fill="#9CB58E"/>
+      <circle cx="210" cy="270" r="16" fill="none" stroke="#9CB58E" stroke-width="1.5" opacity="0.5"/>
+      <text x="230" y="275" font-family="Space Grotesk" font-size="13" font-weight="700" fill="#F4F2ED">Budapest</text>
+      <line x1="245" y1="205" x2="210" y2="258" stroke="#9CB58E" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+    </svg>
+    <div class="maplegend">
+      <span><i style="background:#42563A"></i> Heves megye</span>
+      <span><i style="background:#9CB58E;border-radius:50%;"></i> Budapest</span>
+    </div>
   </div>
 </section>
 
@@ -334,7 +350,34 @@
   <a class="quote" href="#ajanlat">Ingyenes árajánlat</a>
 </div>
 
+<div class="lightbox" id="lightbox">
+  <div class="lbinner">
+    <button class="lbclose" id="lbclose" aria-label="Bezárás">✕</button>
+    <img id="lbimg" src="" alt="">
+    <div class="lbcta">
+      <a class="btn btn-primary" href="#ajanlat" id="lbquote">Ingyenes árajánlatot kérek</a>
+      <a class="btn btn-outline-light" href="tel:+36209796081">☎ Hívás</a>
+    </div>
+  </div>
+</div>
+
 <script>
+  const lightbox = document.getElementById('lightbox');
+  const lbimg = document.getElementById('lbimg');
+  const lbquote = document.getElementById('lbquote');
+  document.querySelectorAll('#pgrid .gi').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const img = btn.querySelector('img');
+      lbimg.src = img.src;
+      lbimg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+  document.getElementById('lbclose').addEventListener('click', ()=> lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e)=>{ if (e.target === lightbox) lightbox.classList.remove('open'); });
+  lbquote.addEventListener('click', ()=> lightbox.classList.remove('open'));
+  document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') lightbox.classList.remove('open'); });
+
   document.querySelectorAll('.leadform').forEach(form=>{
     form.addEventListener('submit', async (e)=>{
       e.preventDefault();
