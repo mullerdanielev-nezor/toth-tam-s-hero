@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kerítés, térkő, beton — ingyenes árajánlat 24 órán belül | Tóth Tamás</title>
 <meta name="description" content="Földmunka, alapozás, betonozás, térkövezés és kerítésépítés — saját csapattal, írásos garanciával, Heves megyében és Budapesten. Kérj ingyenes, kötelezettségmentes árajánlatot.">
+<link rel="canonical" href="https://tothtamasepito.hu/landing.html">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#42563A">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:title" content="Kerítés, térkő, beton — ingyenes árajánlat 24 órán belül">
+<meta property="og:description" content="Saját csapattal, írásos garanciával, Heves megyében és Budapesten.">
+<meta property="og:image" content="https://tothtamasepito.hu/preview/img/terkovezes-nagy-terasz-keritessel-cegled.webp">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
@@ -132,6 +143,9 @@
   .formcard .btn-primary { width:100%; margin-top:4px; padding:15px; font-size:15px; box-shadow:none; }
   .formcard .trust { display:flex; align-items:center; gap:8px; margin-top:14px; font-size:12px; opacity:.6; }
   .formcard .trust .dot { width:7px; height:7px; border-radius:50%; background:#42563A; flex-shrink:0; }
+  .formcard button[disabled] { opacity:.6; cursor:default; }
+  .form-success { text-align:center; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14.5px; color:#42563A; padding:14px; }
+  .form-error { color:#a33; font-size:12.5px; margin-top:10px; text-align:center; }
 
   /* ===== Footer ===== */
   .minifooter { background:#111411; color:#8a877e; text-align:center; padding:28px 20px; font-size:12px; }
@@ -154,7 +168,7 @@
 
 <header class="site">
   <a class="logo" href="index.html">TÓTH<span>·</span>TAMÁS</a>
-  <a class="hphone" href="tel:+36301234567"><span class="ic">☎</span><span class="txt">+36 30 123 4567</span></a>
+  <a class="hphone" href="tel:+36209796081"><span class="ic">☎</span><span class="txt">+36 20 979 6081</span></a>
 </header>
 
 <!-- ===== HERO ===== -->
@@ -165,7 +179,7 @@
     <p class="sub">Sokan kapnak drága leckét: megrepedt betonlap, süllyedő térkő, félbehagyott kerítés. Én fix áron, írásos garanciával, saját csapattal dolgozom — attól a naptól, amikor elköteleződsz, a végéig.</p>
     <div class="ctarow">
       <a class="btn btn-primary" href="#ajanlat">Ingyenes árajánlatot kérek</a>
-      <a class="btn" style="background:transparent;color:#1C1B19;border:1.5px solid rgba(28,27,25,.25);" href="tel:+36301234567">☎ +36 30 123 4567</a>
+      <a class="btn" style="background:transparent;color:#1C1B19;border:1.5px solid rgba(28,27,25,.25);" href="tel:+36209796081">☎ +36 20 979 6081</a>
     </div>
     <div class="trustrow">
       <span><i class="dot"></i>15+ év tapasztalat</span>
@@ -270,41 +284,80 @@
       <div class="trustline"><i class="dot"></i>Nincs kötelezettség, nincs rejtett költség</div>
       <div class="trustline"><i class="dot"></i>Írásos, fix árajánlat a felmérés után</div>
       <div class="trustline"><i class="dot"></i>15+ éve dolgozom a szakmában</div>
-      <a class="bigphone" href="tel:+36301234567"><span class="ic">☎</span> +36 30 123 4567</a>
+      <a class="bigphone" href="tel:+36209796081"><span class="ic">☎</span> +36 20 979 6081</a>
     </div>
     <div class="formcard">
       <b class="ftitle">Ingyenes árajánlatot kérek</b>
       <p class="fsub">Töltsd ki az alábbi adatokat, és 24 órán belül visszahívlak.</p>
-      <div class="row2">
-        <div class="field"><label>Neved</label><input type="text" placeholder="Kovács Péter"></div>
-        <div class="field"><label>Telefonszámod</label><input type="tel" placeholder="+36 30 000 0000"></div>
-      </div>
-      <div class="field"><label>Válassz szolgáltatást</label>
-        <select>
-          <option>Válassz szolgáltatást</option>
-          <option>Földmunka</option>
-          <option>Alapozás</option>
-          <option>Betonozás</option>
-          <option>Térkövezés</option>
-          <option>Kerítés</option>
-        </select>
-      </div>
-      <div class="field"><label>Üzeneted (opcionális)</label><textarea placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea></div>
-      <button class="btn btn-primary">Ingyenes árajánlatot kérek</button>
-      <div class="trust"><i class="dot"></i>Kötelezettségmentes, nem adjuk el az adataidat</div>
+      <form class="leadform" data-success="#landing-form-success">
+        <input type="hidden" name="access_key" value="c8e5742e-33ba-4de1-b8a3-29d47f615098">
+        <input type="hidden" name="subject" value="Új árajánlatkérés — tothtamasepito.hu (landing)">
+        <div class="row2">
+          <div class="field"><label>Neved</label><input type="text" name="name" placeholder="Kovács Péter" required></div>
+          <div class="field"><label>Telefonszámod</label><input type="tel" name="phone" placeholder="+36 30 000 0000" required></div>
+        </div>
+        <div class="field"><label>Válassz szolgáltatást</label>
+          <select name="service">
+            <option>Válassz szolgáltatást</option>
+            <option>Földmunka</option>
+            <option>Alapozás</option>
+            <option>Betonozás</option>
+            <option>Térkövezés</option>
+            <option>Kerítés</option>
+          </select>
+        </div>
+        <div class="field"><label>Üzeneted (opcionális)</label><textarea name="message" placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea></div>
+        <button class="btn btn-primary" type="submit">Ingyenes árajánlatot kérek</button>
+        <div class="trust"><i class="dot"></i>Kötelezettségmentes, nem adjuk el az adataidat</div>
+      </form>
+      <div id="landing-form-success" class="form-success" hidden>Köszönöm! Megkaptam az üzeneted, 24 órán belül visszahívlak.</div>
     </div>
   </div>
 </section>
 
 <footer class="minifooter">
   <div class="logo" style="font-family:'Archivo Black',sans-serif;font-size:16px;">TÓTH·TAMÁS</div>
-  <div>© 2026 Tóth Tamás — Minden jog fenntartva. · Preview, csak illusztráció</div>
+  <div>© 2026 Tóth Tamás — Minden jog fenntartva.</div>
 </footer>
 
 <div class="stickycta">
-  <a class="call" href="tel:+36301234567">☎ Hívás</a>
+  <a class="call" href="tel:+36209796081">☎ Hívás</a>
   <a class="quote" href="#ajanlat">Ingyenes árajánlat</a>
 </div>
+
+<script>
+  document.querySelectorAll('.leadform').forEach(form=>{
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const oldLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Küldés...';
+      form.querySelector('.form-error')?.remove();
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        const data = await res.json();
+        if (data.success) {
+          form.hidden = true;
+          document.querySelector(form.dataset.success).hidden = false;
+        } else {
+          throw new Error(data.message || 'Ismeretlen hiba');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = oldLabel;
+        const errEl = document.createElement('div');
+        errEl.className = 'form-error';
+        errEl.textContent = 'Nem sikerült elküldeni. Kérlek próbáld újra, vagy hívj közvetlenül.';
+        form.appendChild(errEl);
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
