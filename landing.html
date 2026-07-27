@@ -140,6 +140,10 @@
   .fcleft .bigphone .ic { width:44px; height:44px; border-radius:50%; background:#42563A; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
 
   .formcard { flex:1 1 380px; min-width:300px; background:#F4F2ED; color:#1C1B19; border-radius:18px; padding:30px 28px; box-shadow:0 30px 60px rgba(0,0,0,.3); }
+  .formcard-link { display:flex; flex-direction:column; align-items:flex-start; text-decoration:none; text-align:left; transition:transform .15s, box-shadow .15s; }
+  .formcard-link:hover { transform:translateY(-3px); box-shadow:0 36px 70px rgba(0,0,0,.4); }
+  .formcard-link .fsub { margin-bottom:22px; }
+  .formcard-link .btn-primary { align-self:stretch; text-align:center; }
   .formcard b.ftitle { display:block; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; margin-bottom:5px; }
   .formcard .fsub { font-size:12.5px; opacity:.65; margin-bottom:20px; line-height:1.5; }
   .field { margin-bottom:14px; }
@@ -341,32 +345,11 @@
       <div class="trustline"><i class="dot"></i>15+ éve dolgozom a szakmában</div>
       <a class="bigphone" href="tel:+36209796081"><span class="ic">☎</span> +36 20 979 6081</a>
     </div>
-    <div class="formcard">
+    <a class="formcard formcard-link" href="#ajanlat-top">
       <b class="ftitle">Ingyenes árajánlatot kérek</b>
-      <p class="fsub">Töltsd ki az alábbi adatokat, és 24 órán belül visszahívlak.</p>
-      <form class="leadform" data-success="#landing-form-success">
-        <input type="hidden" name="access_key" value="c8e5742e-33ba-4de1-b8a3-29d47f615098">
-        <input type="hidden" name="subject" value="Új árajánlatkérés — tothtamasepito.hu (landing)">
-        <div class="row2">
-          <div class="field"><label>Neved</label><input type="text" name="name" placeholder="Kovács Péter" required></div>
-          <div class="field"><label>Telefonszámod</label><input type="tel" name="phone" placeholder="+36 30 000 0000" required></div>
-        </div>
-        <div class="field"><label>Válassz szolgáltatást</label>
-          <select name="service">
-            <option>Válassz szolgáltatást</option>
-            <option>Földmunka</option>
-            <option>Alapozás</option>
-            <option>Betonozás</option>
-            <option>Térkövezés</option>
-            <option>Kerítés</option>
-          </select>
-        </div>
-        <div class="field"><label>Üzeneted (opcionális)</label><textarea name="message" placeholder="Pl. 40 m² teraszra térkövezést szeretnék..."></textarea></div>
-        <button class="btn btn-primary" type="submit">Ingyenes árajánlatot kérek</button>
-        <div class="trust"><i class="dot"></i>Kötelezettségmentes, nem adjuk el az adataidat</div>
-      </form>
-      <div id="landing-form-success" class="form-success" hidden>Köszönöm! Megkaptam az üzeneted, 24 órán belül visszahívlak.</div>
-    </div>
+      <p class="fsub">Kattints, és felviszünk az űrlaphoz — két perc az egész.</p>
+      <span class="btn btn-primary">Ugrás az űrlaphoz ⤴</span>
+    </a>
   </div>
 </section>
 
